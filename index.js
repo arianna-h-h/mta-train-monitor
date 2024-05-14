@@ -1,34 +1,35 @@
+require('dotenv').config();
+
 const express = require('express');
-const bodyParser = require('body-parser');
+const cors = require('cors');
 
-const routes = require('./project/backend/routes'); // Import train routes
-const expressListEndpoints = require('express-list-endpoints');
+const routes = require('./project/backend/routes'); // Import routes
+const expressListEndpoints = require('express-list-endpoints'); // Used for debugging
 
-// Create an Express app
 const app = express();
 
-// Parse JSON request bodies
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors({
+  origin: 'http://localhost:3000'
+})); // Use cors to allow cross 
 
 // Mount routes onto the Express app
 app.use('/api', routes);
 
-// Define a default route
+// Define a default route used for initial debugging
 app.get('/', (req, res) => {
     res.send('Welcome to the Train Application!');
 });
 
 const endpoints = expressListEndpoints(app);
-console.log('main index', endpoints)
+console.log('All endpoints', endpoints)
+
 // Error handling middleware
 app.use((err, req, res, next) => {
-    console.error(err.stack);
     res.status(500).send('Internal Server Error');
 });
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
