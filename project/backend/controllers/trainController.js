@@ -8,7 +8,7 @@ exports.getTrainArrivalData = async (req, res) => {
         const { stationCode } = req.query;
         
         // Make a GET request to WMATA API to fetch train arrival data
-        // Could also store URL in an env cariable 
+        // Could also store URL in an env variable
         const response = await axios.get(`https://api.wmata.com/StationPrediction.svc/json/GetPrediction/${stationCode}?api_key=${WMATA_API_KEY}`);
         
         // Get relevant train arrival data from the response

@@ -2,6 +2,7 @@ const axios = require('axios');
 const { getTrainArrivalData } = require('./trainController');
 
 // Mocking GET function
+// This could also be done with a stub.
 jest.mock('axios');
 
 describe('getTrainArrivalData', () => {
