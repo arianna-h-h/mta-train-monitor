@@ -2,16 +2,15 @@ const express = require('express');
 const router = express.Router();
 const expressListEndpoints = require('express-list-endpoints');
 
-
-// Import route file
+// Import train routes file
 const trainRoutes = require('./trainRoutes');
 
-// // Mount route file onto the Express app
+// Mount route file onto the Express app
 router.use('/train', trainRoutes);
-// // Can also mount auth routes here
+// Can also mount auth routes or other routes here
 
+// Used for debugging
 const endpoints = expressListEndpoints(router);
-console.log(endpoints)
-
+console.log('train routes', endpoints);
 
 module.exports = router;
