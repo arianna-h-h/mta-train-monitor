@@ -1,0 +1,9 @@
+# Node.js dependencies
+node_modules/
+
+# Output of npm commands
+npm-debug.log
+
+# Environment variables
+.env
+
