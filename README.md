@@ -1,16 +1,17 @@
 # README
 
-#### Project goal:
-Create a small application to allow a user to look up train arrival data through the
-Washington Area Metro Transit Authority API
+### Project goal:
+Create a small application to allow a user to look up train arrival data through the Washington Area Metro Transit Authority API
 
 ### Instructions: 
+1. Create `.env` file using API key from WMATA.  
+2. Run install and start scripts
 ```
 cd project
 chmod +x install.sh && ./install.sh
 chmod +x start.sh && ./start.sh
 ```
-I chose to use a script to start the servers in order to be more extensible with config, etc by being outside the npm scope. 
+I chose to use a script to start the servers in order to be more extensible with config, etc by being outside the npm scope. There are advatanges disadvantages to both approaches. 
 
 ### Process:
 1. Review instructions
