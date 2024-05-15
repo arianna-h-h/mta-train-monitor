@@ -1,13 +1,11 @@
 {
-  "name": "mta-train-monitor",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "npm-run-all --parallel start:frontend start:backend",
-    "start:frontend": "cd frontend && npm start",
-    "start:backend": "cd backend && node index.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
