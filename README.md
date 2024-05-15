@@ -6,7 +6,9 @@ Washington Area Metro Transit Authority API
 
 ### Instructions: 
 ```
-cd project && chmod +x start.sh && ./start/sh
+cd project
+chmod +x install.sh && ./install.sh
+chmod +x start.sh && ./start.sh
 ```
 I chose to use a script to start the servers in order to be more extensible with config, etc by being outside the npm scope. 
 
